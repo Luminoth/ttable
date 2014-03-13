@@ -1,0 +1,27 @@
+The grammar for the variable list is:
+
+<variable-list> ::= <variable> {, <variable-list>}*
+<variable> ::= <letter>
+
+The grammar for the minterm list is:
+
+<minterm-list> ::= <digit>+ {, <minterm-list>}*
+
+The grammar for the maxterm list is:
+
+<maxterm-list> ::= <digit>+ {, <minterm-list}*
+
+The grammar for a function is:
+
+<expression> ::= <term> | <expression>
+               | <term> ^ <expression>
+               | <term>
+<term> ::= <primary> & <term>
+         | <primary>
+<primary> ::= <variable> <not>*
+            | (<expression>) <not>*
+<not> ::= '
+
+Whitespace is optional.
+
+TODO: possibly <term> ::= <term> {(<expression>)}* {<variable>}? for implicit anding.
